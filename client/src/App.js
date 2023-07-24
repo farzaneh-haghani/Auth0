@@ -1,20 +1,15 @@
-import './App.css';
-import Login from './components/Login';
-import Logout from './components/Logout';
-import Profile from './components/Profile';
-import { useAuth0 } from '@auth0/auth0-react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
 
 function App() {
-  const { isLoading, error } = useAuth0();
   return (
-    <div className='app'>
-      <h1>Authentication with Auth0-React</h1>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Oops, something went wrong!</p>}
-      <Login />
-      <Profile />
-      <Logout />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
