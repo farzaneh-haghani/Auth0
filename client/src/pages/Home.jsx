@@ -1,9 +1,7 @@
-import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Login from "../components/Login";
 import Logout from "../components/Logout";
 import "../App.css";
-import Profile from "./Profile";
 import { Link } from "react-router-dom";
 
 const Home = () => {
